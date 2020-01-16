@@ -1,20 +1,39 @@
-const request = require('request')
-const argv = require('yargs').argv
+const path = require('path')
+const express = require('express')
+const parkData = require('./parksData')
+const bodyParser = require('body-parser')
+
+const app = express()
+
+app.use(bodyParser.urlencoded({ extended: false }));
+
+const port = 3000
 
 
-let parkname = argv.name
-parkname = encodeURIComponent(parkname)
+app.get('/', (req, res) => { 
+ 
+    res.sendFile(`${__dirname}/home.html`)
 
-let url = 'https://services.arcgis.com/ZpeBVw5o1kjit7LT/arcgis/rest/services/RecreationPoints/FeatureServer/0/query?where=UPPER(NAME)%20like%20%27%25'+parkname+'%25%27&outFields=*&outSR=4326&f=json'
+});
 
-request(url , {json : true} , (err, res, body) => {
 
-    if(err){
-        console.log(err)
-    }
-    console.log(process.argv)
-     console.log(body.features[0])
-    
+app.post('/form/data' , (req,res) => {
+
+    console.log(req.body.data)
+
+    parkData(req.body.data , (error ,{data} = {} ) => {
+
+        if(error){
+            console.log(error)
+        }
+        console.log(data)
     })
+    res.end()
+})
 
 
+
+
+
+
+app.listen(3000, () => console.info('Application running on port 3000'));
