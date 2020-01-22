@@ -19,6 +19,7 @@ const row11 = document.querySelector('#row11')
 const row12 = document.querySelector('#row12')
 const table_display = document.querySelector('.table-modify') 
 const databefore = document.querySelector('#beforetable')
+const parkname = document.querySelector('#parkname')
 
 datainput.textContent = ''
 
@@ -36,10 +37,12 @@ searchForm.addEventListener('submit' , (e) => {
                 console.log('error')
                 databefore.textContent = "UNABLE TO FIND THE SPECIFIED PARK."
                 table_display.style.display = "none"
+                parkname.textContent = ""
             }
             else {
                 console.log(data)
                 databefore.textContent = "below table provides Information about the specified park"
+                parkname.textContent = "Park Name : " + data.name
                 table_display.style.display = "block";
                 // datainput.textContent = data.name
                 // datainput.textContent = "   Park Name : "+ data.name +","+
