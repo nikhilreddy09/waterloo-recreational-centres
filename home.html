@@ -1,21 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="./public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./public/css/styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home Page</title>
 </head>
 <body>
-    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="#">Search</a>
+            <a class="nav-item nav-link" href="#">About</a>
+            <a class="nav-item nav-link disabled" href="#">Contact</a>
+          </div>
+        </div>
+      </nav>
     <header>
         <h1> Parks Data in Waterloo Canada</h1>
     </header>
     <main>
         <form>
             <label> Enter the park name to get the information:</label>
-            <input type="text" name="data" id="data">
-            <button type="submit">Search</button>
+            <input type="text" name="data" id="data"><br>
+            <button type="submit" id="btn">Search</button>
+            <p id="beforetable"></p>
+            <table class="table table-hover table-modify">
+              <thead>
+                <tr>
+                  <th scope="col">Sl No.</th>
+                  <th scope="col">Facility</th>
+                  <th scope="col">Availability</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Arena</td>
+                  <td id="row1"></td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Ball Diamond</td>
+                  <td id="row2"></td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Basketball Court</td>
+                  <td id="row3"></td>
+                </tr>
+                <tr>
+                  <th scope="row">4</th>
+                  <td>Cricket Pitch</td>
+                  <td id="row4"></td>
+                </tr>
+                <tr>
+                  <th scope="row">5</th>
+                  <td>gymnasium</td>
+                  <td id="row5"></td>
+                </tr>
+                <tr>
+                  <th scope="row">6</th>
+                  <td>Picnic Area</td>
+                  <td id="row6"></td>
+                </tr>
+                <tr>
+                  <th scope="row">7</th>
+                  <td>PlayGround</td>
+                  <td id="row7"></td>
+                </tr>
+                <tr>
+                  <th scope="row">8</th>
+                  <td>Indoor Swimming Pool</td>
+                  <td id="row8"></td>
+                </tr>
+                <tr>
+                  <th scope="row">9</th>
+                  <td>Outdoor Swimming Pool</td>
+                  <td id="row9"></td>
+                </tr>
+                <tr>
+                  <th scope="row">10</th>
+                  <td>Tennis Court</td>
+                  <td id="row10"></td>
+                </tr>
+                <tr>
+                  <th scope="row">11</th>
+                  <td>Indoor Track</td>
+                  <td id="row11"></td>
+                </tr>
+                <tr>
+                  <th scope="row">12</th>
+                  <td>Outdoor Track</td>
+                  <td id="row12"></td>
+                </tr>
+               
+              </tbody>
+            </table>
             <p id="datauser"></p>
         </form>
     </main>
